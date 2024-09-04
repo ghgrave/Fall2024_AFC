@@ -11,14 +11,19 @@
   <body>
     <form action="" method="get">
       <label>First Name:
-        <input type="text" name="fname" id="fname">
+        <input placeholder="Please enter first name" type="text" name="fname" id="fname" required maxlength="5" minlength="3">
       </label>
       <br>
+      <label>Age:
+        <input type="number" name="age" id="" min="21">
+      </label>
+      <br>
+
       <label for="pw">Password:</label>
       <input type="password" name="pw" id="pw">
       <br>
-      <!-- <label for="email">Email:</label>
-      <input type="email" name="emailAddress" id="email"> -->
+      <label for="email">Email:</label>
+      <input type="email" name="emailAddress" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
       <br>
       <label>
         Are you married?
@@ -34,12 +39,28 @@
         <input type="radio" name="isAlive" id="" value="zombie">It's Complicated
       </label>
       <br>
+      <label>Favorite Colors:
+        Blue <input type="checkbox" name="color1" id="" value="blue">
+        <input type="checkbox" name="color2" id="" value="red"> Red
+        <input type="checkbox" name="color3" id="" value="yellow"> Yellow
+      </label>
+      <br>
+      <label for="">Please tell us more about yourself:
+        <br>
+        <textarea name="other_description" id="" cols="100" rows="3">
+        </textarea>
+      </label>
+      <br>
+      <label>State:
+        <select name="state" id="">
+          <option value="tx">TX</option>
+          <option value="ok">OK</option>
+          <option value="ca">CA</option>
+        </select>
+      </label>
+      <br>
       <button type="submit">Submit</button>
     </form>
-
-
-
-
 
 
 
