@@ -10,7 +10,7 @@ export default function Moviecard({doggy}) {
   const posterImage = `https://image.tmdb.org/t/p/w200${doggy.poster_path}`
  
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, height: "100px", overflow: "scroll" }}>
       <CardActionArea>
         <CardMedia
           component="img"
