@@ -9,6 +9,7 @@ import "./App.css";
 import Button from '@mui/material/Button';
 
 function App() {
+  const { VITE_TMDB_API_TOKEN } = process.env;
   const [movies, setMovies] = useState([])
   // https://api.themoviedb.org/3/movie/now_playing
   const baseUrl = "https://api.themoviedb.org/3"
@@ -26,7 +27,7 @@ function App() {
       params: {language: 'en-US', page: '1'},
       headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZGUzZjEzYTRjZGQwNTgzMWI5NWE5N2QzYjNlMmRhNiIsIm5iZiI6MTcyNzg4NDM3OS42Njc3MTQsInN1YiI6IjVjMzU0YWMxOTI1MTQxNDgyYmRkY2U3MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.t7aDRk2ZNyN93cP_ldpxoaQpHEOXBogvOJ1qDK-SuV8'
+        Authorization: `Bearer ${VITE_TMDB_API_TOKEN}`
       }
     };
     axios(options)
