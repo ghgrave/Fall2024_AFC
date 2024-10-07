@@ -75,7 +75,7 @@ export default function NavBar() {
         params: {query: searchData, include_adult: 'false', language: 'en-US', page: '1'},
         headers: {
           accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZGUzZjEzYTRjZGQwNTgzMWI5NWE5N2QzYjNlMmRhNiIsIm5iZiI6MTcyODMxNDE2NC4wMTM4NjgsInN1YiI6IjVjMzU0YWMxOTI1MTQxNDgyYmRkY2U3MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bkw1pTTlA_hH3xD6UeVk-fQO-etB3ZfMi7UKfJH_9UU'
+          Authorization: `Bearer ${VITE_TMDB_API_TOKEN}`
         }
       };
       
