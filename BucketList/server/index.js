@@ -2,7 +2,14 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
-const data = require("./fakedata.json")
+const data = require("./fakedata.json");
+let newId = 3;
+
+// built-in body-parser
+// if json from client
+app.use(express.json());
+// if url-encoded
+app.use(express.urlencoded({ extended: true }));
 
 // ROUTE HANDLERS
 app.get("/", (req, res) => {
@@ -16,7 +23,25 @@ app.get("/api/items", (req, res) => {
   // 2) JSON
   // 3) Everything back
   // 4) Array of objects
-  res.json(data)
+  res.json(data);
+});
+
+// Create
+// 1) Route - /api/items, POST method
+app.post("/api/items", (req, res) => {
+  // 1.5) Get data from client
+  // 1.75) Database sends something back
+  // 2) JSON -> client
+
+  let newItem = {
+    id: ++newId,
+    description: req.body.description,
+    is_complete: false,
+  };
+  let items = [...data, newItem];
+  // 3) Send back one thing
+  // 4) One object - DATA, receipt from database
+  res.json(items);
 });
 
 // LISTENER
